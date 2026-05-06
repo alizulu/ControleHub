@@ -14,7 +14,6 @@ BEGIN
     DROP TABLE IF EXISTS dbo.Cluster_Temp;
     DROP TABLE IF EXISTS dbo.Disks_Temp;
     DROP TABLE IF EXISTS dbo.Services_Temp;
-    DROP TABLE IF EXISTS dbo.SQL_AlwaysON_Temp;
     DROP TABLE IF EXISTS dbo.SQL_Backups_Temp;
     DROP TABLE IF EXISTS dbo.SQL_DataFiles_Temp;
     DROP TABLE IF EXISTS dbo.SQL_DBProperties_Temp;
@@ -32,8 +31,8 @@ END
 -- =============================================
 
 CREATE TABLE [dbo].[Cluster_Temp](
-	[ServerName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-	[PhysicalComputerName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ServerName] [sysname],
+	[PhysicalComputerName] [sysname],
 	[DTM] [datetime] NULL
 ) ON [PRIMARY]
 
@@ -45,17 +44,17 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[ClusterResource_Temp](
-	[ServerName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-	[ClusterName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-	[ClusterState] [varchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[QuorumType] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[Witness] [varchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[NodeName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-	[NodeState] [varchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[ResourceName] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[ResourceType] [varchar](100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[ResourceState] [varchar](20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	[OwnerNode] [sysname] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	[ServerName] [sysname],
+	[ClusterName] [sysname],
+	[ClusterState] [varchar](20),
+	[QuorumType] [varchar](50),
+	[Witness] [varchar](255),
+	[NodeName] [sysname],
+	[NodeState] [varchar](20),
+	[ResourceName] [sysname],
+	[ResourceType] [varchar](100),
+	[ResourceState] [varchar](20),
+	[OwnerNode] [sysname],
 	[DTM] [datetime] NULL
 ) ON [PRIMARY]
 
@@ -225,7 +224,7 @@ CREATE TABLE [dbo].[SQL_DBProperties_Temp](
 	[IsSubscribed] [nvarchar](10) NULL,
 	[IsSyncWithBackup] [nvarchar](10) NULL,
 	[dbsize] [decimal](15, 2) NULL,
-	[cmptlevel] [tinyint] NULL,
+	[cmptlevel] [smallint] NULL,
 	[DTM] [datetime] NULL
 ) ON [PRIMARY]
 GO
@@ -359,4 +358,3 @@ GO
 --   Default Data Added: Environment, ServerList
 
 -- =============================================
-
