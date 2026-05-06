@@ -31,7 +31,7 @@ END
 -- =============================================
 
 CREATE TABLE [dbo].[Cluster_Temp](
-	[ServerName] [sysname],
+	[ServerName] [nvarchar](128) NULL,
 	[PhysicalComputerName] [sysname],
 	[DTM] [datetime] NULL
 ) ON [PRIMARY]
@@ -44,7 +44,7 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[ClusterResource_Temp](
-	[ServerName] [sysname],
+	[ServerName] [nvarchar](128) NULL,
 	[ClusterName] [sysname],
 	[ClusterState] [varchar](20),
 	[QuorumType] [varchar](50),
@@ -67,7 +67,7 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[Disks_Temp](
-	[ServerName] [varchar](100) NULL,
+	[ServerName] [nvarchar](128) NULL,
 	[Drive] [varchar](200) NULL,
 	[VolumeName] [varchar](100) NULL,
 	[TotalSize] [numeric](18, 0) NULL,
@@ -97,7 +97,7 @@ GO
 
 CREATE TABLE [dbo].[ServerList](
 	[ServerID] [int] IDENTITY(1,1) NOT NULL,
-    [ServerName] NVARCHAR(128) NOT NULL,
+    [ServerName] nvarchar(128) NOT NULL,
 	[EnvironmentID] [int] NOT NULL,
 	[CreateDateTime] [datetime] NOT NULL DEFAULT SYSDATETIME(),
 	[LastActiveDateTime] [datetime] NULL,
@@ -120,7 +120,7 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[Services_Temp](
-	[ServerName] [varchar](50) NULL,
+	[ServerName] [nvarchar](128) NULL,
 	[Service_Name] [nvarchar](400) NULL,
 	[Display_Name] [nvarchar](400) NULL,
 	[RunningState] [varchar](50) NULL,
@@ -142,7 +142,7 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[SQL_Backups_Temp](
-	[ServerName] [varchar](50) NULL,
+	[ServerName] [nvarchar](128) NULL,
 	[DatabaseName] [varchar](100) NULL,
 	[Type] [char](1) NULL,
 	[Media] [char](3) NULL,
@@ -292,7 +292,7 @@ GO
 -- =============================================
 
 CREATE TABLE [dbo].[SQL_Jobs_Temp](
-	[ServerName] [nvarchar](250) NULL,
+	[ServerName] nvarchar(128) NULL,
 	[DatabaseName] [nvarchar](250) NULL,
 	[JobName] [nvarchar](400) NULL,
 	[LastStep] [nvarchar](400) NULL,
