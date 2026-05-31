@@ -1,6 +1,6 @@
 # ControleHub
 
-**Lightweight SQL Server Monitoring --- Built for Control, Not
+**Lightweight SQL Server Monitoring Built for Control, Not
 Complexity**
 
 ------------------------------------------------------------------------
