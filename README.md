@@ -7,7 +7,7 @@ Complexity**
 
 ## The Problem
 
-Most SQL Server monitoring tools try to do everything: - deep telemetry
+Most SQL Server monitoring tools try to do everything: deep telemetry
 - complex alerting engines
 - heavy infrastructure
 
@@ -46,7 +46,7 @@ It collects health, performance, and configuration data from multiple
 SQL Server instances and centralises it into a single database for
 reporting and analysis.
 
-> This is not a replacement for enterprise tools --- it's a deliberate
+> This is not a replacement for enterprise tools, it's a deliberate
 > alternative for teams that value **control, transparency, and low
 > footprint**.
 
@@ -84,11 +84,11 @@ No agents. No changes to monitored instances (beyond permissions).
 
 ## Key Design Principles
 
--   **Agentless** -- nothing installed on monitored servers
--   **Transparent** -- all logic is visible and editable
--   **Low footprint** -- minimal impact on production systems
--   **Modular** -- each monitoring domain is independent
--   **Practical** -- built by a DBA for real-world operations
+-   **Agentless**: nothing installed on monitored servers
+-   **Transparent**: all logic is visible and editable
+-   **Low footprint**: minimal impact on production systems
+-   **Modular**: each monitoring domain is independent
+-   **Practical**: built by a DBA for real-world operations
 
 ------------------------------------------------------------------------
 
@@ -149,10 +149,9 @@ Authentication: - Windows Integrated Security (default)
 
 ## Example Use Case
 
-In a mid-sized environment (~40 SQL instances), this approach: -
-eliminated manual health checks
-- surfaced failing jobs and disk pressure early
-- provided a central source of truth
+In a mid-sized environment (+/- 40 SQL instances), this approach eliminated manual health checks
+- surfaced failing jobs, backup failures, database changes, service monitoring and disk pressure early
+- provided a central reepository of information
 
 ------------------------------------------------------------------------
 
