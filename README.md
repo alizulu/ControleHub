@@ -7,11 +7,15 @@ Complexity**
 
 ## The Problem
 
-Most SQL Server monitoring tools try to do everything: deep telemetry
+Most SQL Server monitoring tools try to do everything: 
+
+- deep telemetry
 - complex alerting engines
 - heavy infrastructure
 
-And in doing so, they often become: - expensive
+And in doing so, they often become:
+
+- expensive
 - opaque
 - operationally heavy
 
